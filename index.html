@@ -3,21 +3,36 @@
 <head>
   <title>Mindgames Coding Practice</title>
   <script>
+  var flipped_cards = [];
+  //Take turn function
   function takeTurn(){
-    var flipped_cards = [];
     while(flipped_cards.length < 2){
       //as long as the number of flipped cards is less than 2, push
       //flipped cards to an array
-      flipped_cards.push(Math.floor(100*Math.random()));
+      flipped_cards.push(Math.floor(10*Math.random()));
       console.log(flipped_cards);
       console.log("Card "+flipped_cards.length+" Added!!!");
     }
     console.log(flipped_cards);
   }
-
+  //Check for match function
+  function checkForMatch(){
+    var card_1 = flipped_cards[0];
+    var card_2 = flipped_cards[1];
+    if(card_1 === card_2){
+      return true;
+    }else{
+      return false;
+    }
+  }
     alert("Hello World");
     console.log("Hello World");
     takeTurn();
+    if(checkForMatch()){
+      console.log("We have a MATCH!!!");
+    }else{
+      console.log("SORRY!!! No Match!!!");
+    };
   </script>
 </head>
 <body>
