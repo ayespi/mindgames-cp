@@ -3,6 +3,7 @@
 <head>
   <title>Mindgames Coding Practice</title>
   <script>
+  var possibleMatches = 6;
   var flipped_cards = [];
   //Take turn function
   function takeTurn(){
@@ -16,23 +17,35 @@
     console.log(flipped_cards);
   }
   //Check for match function
-  function checkForMatch(){
+  function cardsMatch(){
     var card_1 = flipped_cards[0];
     var card_2 = flipped_cards[1];
     if(card_1 === card_2){
+      possibleMatches -= 1;
       return true;
     }else{
       return false;
     }
   }
-    alert("Hello World");
+  //Check if player wins function
+  function playerWins(){
+    if(possibleMatches !== 0){
+      takeTurn();
+    }else{
+      console.log("Player Wins!!!");
+    }
+  }
+
+
+    // alert("Hello World");
     console.log("Hello World");
     takeTurn();
-    if(checkForMatch()){
+    if(cardsMatch()){
       console.log("We have a MATCH!!!");
     }else{
       console.log("SORRY!!! No Match!!!");
     };
+    playerWins();
   </script>
 </head>
 <body>
