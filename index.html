@@ -3,62 +3,58 @@
 <head>
   <title>Mindgames Coding Practice</title>
   <script>
-  var Game = {
-    colors: ["green", "red", "yellow", "blue"],
-    computer_sequence: [],
-    player_sequence: [],
-    start: function(){
-      // console.log("Game Started...");
-      var random_index = Math.floor(4 * Math.random());
-      Game.computer_sequence.push(Game.colors[random_index]);
-      return Game.colors[random_index];
-    }
 
-  }
-  // //Take turn function
-  // function takeTurn(){
-  //   while(flipped_cards.length < 2){
-  //     //as long as the number of flipped cards is less than 2, push
-  //     //flipped cards to an array
-  //     flipped_cards.push(Math.floor(10*Math.random()));
-  //     console.log(flipped_cards);
-  //     console.log("Card "+flipped_cards.length+" Added!!!");
-  //   }
-  //   console.log(flipped_cards);
-  // }
-  // //Check for match function
-  // function cardsMatch(){
-  //   var card_1 = flipped_cards[0];
-  //   var card_2 = flipped_cards[1];
-  //   if(card_1 === card_2){
-  //     possibleMatches -= 1;
-  //     return true;
-  //   }else{
-  //     return false;
-  //   }
-  // }
-  // //Check if player wins function
-  // function playerWins(){
-  //   if(possibleMatches !== 0){
-  //     takeTurn();
-  //   }else{
-  //     console.log("Player Wins!!!");
-  //   }
-  // }
-  //
-  //
-  //   // alert("Hello World");
-  //   console.log("Hello World");
-  //   takeTurn();
-  //   if(cardsMatch()){
-  //     console.log("We have a MATCH!!!");
-  //   }else{
-  //     console.log("SORRY!!! No Match!!!");
-  //   };
-  //   playerWins();
   </script>
 </head>
 <body>
-  <script></script>
+  <script>
+  var Game = {
+    images: ["green", "red", "yellow", "blue"],
+    flipped_cards: [],
+    takeTurn: function(){
+      while(flipped_cards.length < 2){
+        //as long as the number of flipped cards is less than 2, push
+        //flipped cards to an array
+        flipped_cards.push(Math.floor(10*Math.random()));
+        console.log(flipped_cards);
+        console.log("Card "+flipped_cards.length+" Added!!!");
+      }
+      console.log(flipped_cards);
+    }
+
+  }
+  //Take turn function
+
+  //Check for match function
+  function cardsMatch(){
+    var card_1 = flipped_cards[0];
+    var card_2 = flipped_cards[1];
+    if(card_1 === card_2){
+      possibleMatches -= 1;
+      return true;
+    }else{
+      return false;
+    }
+  }
+  //Check if player wins function
+  function playerWins(){
+    if(possibleMatches !== 0){
+      takeTurn();
+    }else{
+      console.log("Player Wins!!!");
+    }
+  }
+
+
+    // // alert("Hello World");
+    // console.log("Hello World");
+    // takeTurn();
+    // if(cardsMatch()){
+    //   console.log("We have a MATCH!!!");
+    // }else{
+    //   console.log("SORRY!!! No Match!!!");
+    // };
+    // playerWins();
+  </script>
 </body>
 </html>
